@@ -1,235 +1,122 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:'Poppins','Noto Sans Thai',sans-serif;
-    background:linear-gradient(180deg,#fff8f5,#ffeef2);
-    overflow-x:hidden;
-    min-height:100vh;
-    color:#6b4d57;
+
+margin:0;
+background:#fff8fb;
+overflow:hidden;
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
 }
 
-.background{
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top,#fff,#ffe9ef 40%,#ffe2eb);
-    z-index:-5;
-}
-
-#home,
-#letter{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-}
-
-.hidden{
-    display:none;
-}
-
-.envelope{
-
-    width:340px;
-    padding:40px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.65);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-
-    text-align:center;
-
-    animation:float 3s ease-in-out infinite;
-}
-
-.letter-cover{
-
-    font-size:95px;
-    margin-bottom:15px;
-}
-
-h1{
-
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.envelope p{
-
-    color:#8a6973;
-    margin-bottom:30px;
+#start{
+text-align:center;
 }
 
 button{
 
-    background:#f5a7ba;
-    color:white;
+padding:15px 40px;
+font-size:25px;
+border:none;
+border-radius:40px;
+background:#ff8ab8;
+color:white;
+cursor:pointer;
 
-    border:none;
-
-    border-radius:999px;
-
-    padding:15px 40px;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-    transition:.3s;
 }
 
-button:hover{
+#envelopePage{
 
-    transform:scale(1.06);
+display:none;
 
-    background:#f08ba6;
 }
 
-.card{
+#envelope{
 
-    width:min(700px,95vw);
+width:250px;
+cursor:pointer;
+transition:1s;
 
-    background:white;
-
-    padding:45px;
-
-    border-radius:30px;
-
-    box-shadow:0 15px 50px rgba(0,0,0,.15);
-
-    line-height:2.1;
-
-    animation:fade .9s;
 }
 
-.card h2{
+.open{
 
-    text-align:center;
+transform:scale(1.15) rotateX(35deg);
 
-    margin-bottom:30px;
-
-    color:#d96c8d;
 }
 
-.card p{
+#paper{
 
-    margin-bottom:18px;
+display:none;
 
-    font-size:18px;
+position:absolute;
+
+background:white;
+
+width:75%;
+
+max-width:700px;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 0 30px rgba(0,0,0,.2);
+
+animation:show 2s;
+
+line-height:1.8;
+
+z-index:999;
+
 }
 
-.card h3{
+@keyframes show{
 
-    margin-top:40px;
+from{
 
-    text-align:right;
+opacity:0;
+transform:translateY(100px);
 
-    color:#c15d7d;
 }
 
-.heart{
+to{
 
-    position:fixed;
+opacity:1;
+transform:translateY(0);
 
-    bottom:-40px;
-
-    font-size:22px;
-
-    animation:heart 8s linear forwards;
-
-    pointer-events:none;
 }
 
-.petal{
-
-    position:fixed;
-
-    top:-50px;
-
-    font-size:20px;
-
-    animation:petal 10s linear infinite;
-
-    pointer-events:none;
 }
 
-@keyframes float{
+.float{
 
-    50%{
-
-        transform:translateY(-10px);
-    }
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:none;
-    }
-}
-
-@keyframes heart{
-
-    to{
-
-        transform:translateY(-120vh);
-
-        opacity:0;
-    }
-}
-
-@keyframes petal{
-
-    to{
-
-        transform:
-        translateY(120vh)
-        rotate(360deg);
-
-        opacity:.4;
-    }
-}
-
-@media(max-width:768px){
-
-.envelope{
-
-width:92%;
-padding:35px;
-}
-
-.card{
-
-padding:28px;
-}
-
-.card p{
-
-font-size:17px;
-}
-
-h1{
+position:absolute;
 
 font-size:35px;
+
+animation:fly 5s linear forwards;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-900px);
+
+opacity:0;
+
 }
 
 }
