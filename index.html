@@ -1,104 +1,65 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chooze 🤍</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background"></div>
-<div class="petals"></div>
-<div class="hearts"></div>
+<audio id="music" src="music.mp3"></audio>
 
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<div id="start">
 
-<section id="home">
+    <h1>Ploy has something to tell you,<br>are you ready?</h1>
 
-    <div class="envelope">
+    <button onclick="startCard()">YES</button>
 
-        <div class="letter-cover">
-            💌
-        </div>
+</div>
 
-        <h1>Chooze 🤍</h1>
+<div id="envelopePage">
 
-        <p>
-            I made something for you...
-        </p>
+    <img src="envelope.png"
+    id="envelope"
+    onclick="openLetter()">
 
-        <button id="openBtn">
-            Open Letter
-        </button>
+</div>
 
-    </div>
+<div id="paper">
 
-</section>
-
-<section id="letter" class="hidden">
-
-    <div class="card">
-
-        <h2>
-            Happy Birthday 🤍
-        </h2>
-
-        <div id="typing">
+<h2>happy birthday to chooze</h2>
 
 <p>
+
 เติบโตขึ้นอีกปีแล้วนะ เก่งมาก ๆ เลยคับ
-</p>
 
-<p>
 แต่ละคนก็ค่อย ๆ เดินไปตามเส้นทางของตัวเอง
+
 แต่ก็วนมาเจอกันได้เสมอ
-</p>
 
-<p>
-อะไรที่มันเหนื่อย
-อะไรที่ท้อก็ปล่อยทิ้งไปนะ
+อะไรที่มันเหนื่อย อะไรที่ท้อก็ปล่อยทิ้งไปนะ
+
 ค่อย ๆ เดินไป
-</p>
 
-<p>
 ชูสร์เก่งมาก ๆ อยู่แล้ว
+
 อย่าไปคิดว่าตัวเองทำไม่ได้
-</p>
 
-<p>
 เชื่อใจในตัวเองนะ
+
+เหมือนที่พลอยเชื่อในตัวชูสร์เสมอ
+
+<br><br>
+
+<b>from ploy.cs 🤍</b>
+
 </p>
 
-<p>
-เหมือนที่พลอยเชื่อในตัวชูสร์เสมอ 🤍
-</p>
-
-<p>
-Happy Birthday อีกครั้งนะ
-ขอให้ปีนี้มีแต่เรื่องดี ๆ
-มีรอยยิ้มเยอะ ๆ
-สุขภาพแข็งแรง
-และมีความสุขในทุกวัน
-</p>
-
-        </div>
-
-        <h3>
-            Love,
-            <br>
-            Ploy 🌸
-        </h3>
-
-    </div>
-
-</section>
+</div>
 
 <script src="script.js"></script>
 
