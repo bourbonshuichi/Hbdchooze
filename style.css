@@ -1,1 +1,235 @@
-body{margin:0;font-family:sans-serif;background:#fff7f5;color:#6b4d57;text-align:center}#cover,#letter{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}.hidden{display:none}.envelope{font-size:80px;animation:bounce 2s infinite}@keyframes bounce{50%{transform:translateY(-8px)}}button{padding:12px 24px;border-radius:30px;border:none;background:#f5a9b8} .heart{position:fixed;bottom:-20px;animation:up 6s linear forwards}@keyframes up{to{transform:translateY(-110vh);opacity:0}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins','Noto Sans Thai',sans-serif;
+    background:linear-gradient(180deg,#fff8f5,#ffeef2);
+    overflow-x:hidden;
+    min-height:100vh;
+    color:#6b4d57;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#fff,#ffe9ef 40%,#ffe2eb);
+    z-index:-5;
+}
+
+#home,
+#letter{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.hidden{
+    display:none;
+}
+
+.envelope{
+
+    width:340px;
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+    text-align:center;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.letter-cover{
+
+    font-size:95px;
+    margin-bottom:15px;
+}
+
+h1{
+
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.envelope p{
+
+    color:#8a6973;
+    margin-bottom:30px;
+}
+
+button{
+
+    background:#f5a7ba;
+    color:white;
+
+    border:none;
+
+    border-radius:999px;
+
+    padding:15px 40px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.06);
+
+    background:#f08ba6;
+}
+
+.card{
+
+    width:min(700px,95vw);
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:0 15px 50px rgba(0,0,0,.15);
+
+    line-height:2.1;
+
+    animation:fade .9s;
+}
+
+.card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#d96c8d;
+}
+
+.card p{
+
+    margin-bottom:18px;
+
+    font-size:18px;
+}
+
+.card h3{
+
+    margin-top:40px;
+
+    text-align:right;
+
+    color:#c15d7d;
+}
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    font-size:22px;
+
+    animation:heart 8s linear forwards;
+
+    pointer-events:none;
+}
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:20px;
+
+    animation:petal 10s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+    }
+}
+
+@keyframes heart{
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+    }
+}
+
+@keyframes petal{
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+        opacity:.4;
+    }
+}
+
+@media(max-width:768px){
+
+.envelope{
+
+width:92%;
+padding:35px;
+}
+
+.card{
+
+padding:28px;
+}
+
+.card p{
+
+font-size:17px;
+}
+
+h1{
+
+font-size:35px;
+}
+
+}
