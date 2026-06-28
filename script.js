@@ -1,104 +1,81 @@
-const openBtn = document.getElementById("openBtn");
-const home = document.getElementById("home");
-const letter = document.getElementById("letter");
-const music = document.getElementById("music");
-const typing = document.getElementById("typing");
+const music=document.getElementById("music");
 
-const originalHTML = typing.innerHTML;
+function startCard(){
 
-typing.innerHTML = "";
+document.getElementById("start").style.display="none";
 
-openBtn.addEventListener("click", () => {
+document.getElementById("envelopePage").style.display="block";
 
-    home.style.display = "none";
-    letter.classList.remove("hidden");
+music.volume=0;
 
-    // เล่นเพลง
-    music.play().catch(() => {});
+music.play();
 
-    createHearts();
-    createPetals();
+let v=0;
 
-    typeWriter(originalHTML);
+let fade=setInterval(()=>{
 
-});
+v+=0.02;
 
-function typeWriter(html){
+music.volume=v;
 
-    let i = 0;
+if(v>=1){
 
-    typing.innerHTML = "";
-
-    const timer = setInterval(()=>{
-
-        typing.innerHTML = html.substring(0,i);
-
-        i++;
-
-        if(i > html.length){
-
-            clearInterval(timer);
-
-        }
-
-    },18);
+clearInterval(fade);
 
 }
 
-function createHearts(){
-
-    setInterval(()=>{
-
-        const heart=document.createElement("div");
-
-        heart.className="heart";
-
-        heart.innerHTML=Math.random()>0.5?"🤍":"💖";
-
-        heart.style.left=Math.random()*100+"vw";
-
-        heart.style.fontSize=(18+Math.random()*18)+"px";
-
-        heart.style.animationDuration=(5+Math.random()*5)+"s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-
-            heart.remove();
-
-        },10000);
-
-    },250);
+},200);
 
 }
 
-function createPetals(){
+function openLetter(){
 
-    const flowers=["🌸","🌺","🌼","🌷"];
+document.getElementById("envelope").classList.add("open");
 
-    setInterval(()=>{
+createEffect();
 
-        const p=document.createElement("div");
+setTimeout(()=>{
 
-        p.className="petal";
+document.getElementById("paper").style.display="block";
 
-        p.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+},5000);
 
-        p.style.left=Math.random()*100+"vw";
+}
 
-        p.style.fontSize=(18+Math.random()*22)+"px";
+function createEffect(){
 
-        p.style.animationDuration=(8+Math.random()*6)+"s";
+const emoji=["🤍","🌸","🎈","🤍","🌸","🎈","🤍","🌸"];
 
-        document.body.appendChild(p);
+let total=120;
 
-        setTimeout(()=>{
+for(let i=0;i<total;i++){
 
-            p.remove();
+setTimeout(()=>{
 
-        },15000);
+let e=document.createElement("div");
 
-    },350);
+e.className="float";
+
+e.innerHTML=emoji[Math.floor(Math.random()*emoji.length)];
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.bottom="-50px";
+
+e.style.fontSize=(25+Math.random()*30)+"px";
+
+e.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{
+
+e.remove();
+
+},8000);
+
+},i*80);
+
+}
 
 }
