@@ -1,0 +1,1 @@
+function openLetter(){cover.style.display="none";letter.classList.remove("hidden");for(let i=0;i<40;i++){let h=document.createElement("div");h.className="heart";h.innerHTML="🤍";h.style.left=Math.random()*100+"vw";h.style.animationDelay=Math.random()*3+"s";document.body.appendChild(h);}}music.onclick=()=>alert("ใส่ลิงก์เพลงโปรดของคุณในภายหลัง เช่น Turning Page");
